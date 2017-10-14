@@ -32,6 +32,10 @@ fn main() {
     // show_price("鮭", catalog.get("鮭"));
 }
 
+fn aaa() -> Option<u32>{
+    Some(10)
+}
+
 fn show_price(name: &str, price: u32) {
     /* これをよみましょう：https://qiita.com/tatsuya6502/items/cd41599291e2e5f38a4a */
     println!("{}は{}円です", name, price);

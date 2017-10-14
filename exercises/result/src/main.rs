@@ -15,7 +15,11 @@ use std::fs::File;
 fn main() {
     let mut args = env::args();
     if let Some(file) = args.nth(1) {
-        println!("{}", read_file(&file).unwrap());        
+        match read_file(&file){
+            Ok(content) => println!("{}", content),
+            Err(e) => println!("Error: {}", e),
+        }
+        // println!("{}", read_file(&file).unwrap());        
         /*
         println!("{}", read_file2(&file));
         */
