@@ -66,13 +66,14 @@ impl Point {
 }
 
 /* ライフタイムが1個のときはかかなくていい */
-struct Rect<'a, 'b> {
+/* ライフタイムパラメタはライフタイムの依存関係を示すらしい？？ */
+struct Rect<'a> {
     top_left: &'a Point,
-    bottom_right: &'b Point,
+    bottom_right: &'a Point,
 }
 
-impl<'a, 'b> Rect<'a, 'b>{
-    fn new(top_left: &'a Point, bottom_right: &'b Point) -> Rect<'a, 'b> {
+impl<'a> Rect<'a>{
+    fn new(top_left: &'a Point, bottom_right: &'a Point) -> Rect<'a> {
         Rect {
             top_left: top_left,
             bottom_right: bottom_right,
