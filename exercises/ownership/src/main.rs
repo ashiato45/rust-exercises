@@ -8,17 +8,19 @@ fn main() {
 }
 
 fn words() -> (String, String) {
-    (format!("こんにちは"), format!("世界"))
+    (format!("こんにちは世界"), format!("世界"))
 }
 
 fn output(text: String) {
-    let kanji_only = remove_hiragana(text);
+    let (text, kanji_only) = remove_hiragana(text);
     println!("{}", kanji_only);
     /*
     ゴール2：次の行をアンコメントすると何がおきるでしょうか？
     これをコンパイルを通すにはどうすれば良いでしょうか？
+    エラーコードE0382でぐぐると詳細なエラーメッセージがわかるぽい．
+    →貸したものは返してもらう!1つの方法は，返り値として返してもらうこと．
     */
-    // println!("ひらがなを抜き取ると：{:?} → {:?}", text, kanji_only);
+    println!("ひらがなを抜き取ると：{:?} → {:?}", text, kanji_only);
 
     /*
     ゴール3：データをコピーせずにコンパイルを通すにはどおすれば良いでしょうか？
@@ -26,7 +28,7 @@ fn output(text: String) {
     */
 }
 
-fn remove_hiragana(text: String) -> String {
+fn remove_hiragana(text: String) -> (String, String) {
     /*
      ゴール1：コンパイルを通すには何を変更すれば良いでしょうか
      Rustの変数は基本的に書き換えられない!result.pushは変更しているのでコンパイルエラーになる．
@@ -37,5 +39,5 @@ fn remove_hiragana(text: String) -> String {
             result.push(c);
         };
     }
-    result
+    (text, result) /* returnって書いてないけどこれが返り値 */
 }
