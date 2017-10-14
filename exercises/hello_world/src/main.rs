@@ -11,7 +11,8 @@
 
 fn main() {
     // let name = "ashiato45"; /* このときnameはこの文字列へのポインタになるらしい */
-    let name = "ashiato45".to_string();
+    // let name = "ashiato45".to_string();
+    let name = "ashiato45".to_string(); /* 型注釈はこうする */
     println!("Hello, {}!", name);
     println!("{}", name);
     println!("{:?}", name);
