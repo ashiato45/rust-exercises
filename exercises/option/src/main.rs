@@ -18,16 +18,21 @@ fn main() {
     for item in catalog.keys() {
         let result = catalog.get(item);
         /* resultにはいまoptionがかかっている．Someならとりだし，noneならなにもしない */
-        match result{
-            Some(price) => show_price(item, price),
-            None => ()
-        }
+        let price = match result{
+            Some(price) => *price,
+            None => 0
+        };
+        // match result{
+        //     Some(price) => show_price(item, price),
+        //     None => ()
+        // }
+        show_price(item, price);
         // show_price(item, catalog.get(item));
     }
     // show_price("鮭", catalog.get("鮭"));
 }
 
-fn show_price(name: &str, price: &u32) {
+fn show_price(name: &str, price: u32) {
     /* これをよみましょう：https://qiita.com/tatsuya6502/items/cd41599291e2e5f38a4a */
     println!("{}は{}円です", name, price);
 }
