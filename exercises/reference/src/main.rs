@@ -8,12 +8,13 @@
 
 fn main() {
     let name = format!("dear rustaceans");
-    greet(name.clone()); /* だいたいクローンしとけばなんとかなる */
-    greet(name);
-    greet(name); /* エラー! */
+    let refname = &name;
+    greet(&name); /* だいたいクローンしとけばなんとかなる，けど一瞬所有権を返してもらうみたいなことをしたい． */
+    greet(refname);
+    greet(refname); /* エラー! */
 }
 
-fn greet(name: String) {
+fn greet(name: &String) {
     println!("Hello {}", name);
 }
 
