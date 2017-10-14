@@ -10,9 +10,7 @@ Goals:
 
 fn main() {
     points();
-    /* [1]
     area1();
-    */
     /* [3]
     area2();
     */
@@ -31,7 +29,6 @@ fn points() {
              to.y);
 }
 
-/* [2]
 fn area1() {
     let top = Point::new(10.0, 10.0);
     let diff = Point::new(5.0, 10.0);
@@ -39,7 +36,6 @@ fn area1() {
     let rect = Rect::new(&top, &bottom);
     println!("area = {}", rect.area());
 }
-*/
 
 /* [4]
 fn area2() {
@@ -69,14 +65,14 @@ impl Point {
     }
 }
 
-/* [2]
-struct Rect {
+/* ライフタイムが1個のときはかかなくていい */
+struct Rect<'a, 'b> {
     top_left: &'a Point,
     bottom_right: &'b Point,
 }
 
-impl Rect {
-    fn new(top_left: &'a Point, bottom_right: &'b Point) -> Rect {
+impl<'a, 'b> Rect<'a, 'b>{
+    fn new(top_left: &'a Point, bottom_right: &'b Point) -> Rect<'a, 'b> {
         Rect {
             top_left: top_left,
             bottom_right: bottom_right,
@@ -88,4 +84,3 @@ impl Rect {
         dx * dy
     }
 }
-*/
