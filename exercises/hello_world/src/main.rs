@@ -17,6 +17,7 @@ fn main() {
     println!("{}", name);
     println!("{:?}", name);
     greetings(name);
+    greetings(name); /* これは失敗する．関数呼出をすると「所有権」は相手に移って，終わったら消滅するのでここで使うことはできない． */
 }
 
 fn greetings(name: String) {
