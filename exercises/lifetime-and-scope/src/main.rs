@@ -16,13 +16,12 @@ fn main() {
 
     let mut text;
     {
-        /* [1]
-        let source = "new source".to_string();
-        */
-        p(&source, "&source");
-        text = &source;
+        let a = "new source".to_string();
+
+        p(&a, "&source");
+        text = &a;
         p(text, "text");
-    }
+    } /* error occurs because the target of text disappears */
     p(text, "text");
 }
 
