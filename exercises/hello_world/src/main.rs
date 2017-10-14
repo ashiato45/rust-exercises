@@ -10,11 +10,12 @@
 #![allow(dead_code)]
 
 fn main() {
-    let name = "ashiato45";
+    // let name = "ashiato45"; /* このときnameはこの文字列へのポインタになるらしい */
+    let name = "ashiato45".to_string();
     println!("Hello, {}!", name);
     println!("{}", name);
     println!("{:?}", name);
-    // greetings(name);
+    greetings(name);
 }
 
 fn greetings(name: String) {
