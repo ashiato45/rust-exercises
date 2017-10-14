@@ -14,9 +14,10 @@ fn main() {
     }
 
 
+    let a;
     let mut text;
     {
-        let a = "new source".to_string();
+        a = "new source".to_string();
 
         p(&a, "&source");
         text = &a;
