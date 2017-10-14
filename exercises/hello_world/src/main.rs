@@ -10,7 +10,7 @@
 #![allow(dead_code)]
 
 fn main() {
-    println!("Hello, world!");
+    println!("Hello, ashiato45!");
     //greetings(name);
 }
 
