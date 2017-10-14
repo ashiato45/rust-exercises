@@ -18,6 +18,7 @@ fn words() -> (String, String) {
 }
 
 fn concat(prefix: &mut String, postfix: &String) {
+    /* 2つ引数をもらったとき，返り値がどこまで生きるかを書くのがライフタイムパラメタらしい */
     prefix.push(' ');
     for c in postfix.chars() {
         prefix.push(c);
