@@ -29,8 +29,9 @@ fn output(text: String) {
 fn remove_hiragana(text: String) -> String {
     /*
      ゴール1：コンパイルを通すには何を変更すれば良いでしょうか
+     Rustの変数は基本的に書き換えられない!result.pushは変更しているのでコンパイルエラーになる．
     */
-    let result = String::new();
+    let mut result = String::new();
     for c in text.chars() {
         if c < 'ぁ' || 'ん' < c {
             result.push(c);
