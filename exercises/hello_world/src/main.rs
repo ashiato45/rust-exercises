@@ -10,8 +10,9 @@
 #![allow(dead_code)]
 
 fn main() {
-    println!("Hello, ashiato45!");
-    //greetings(name);
+    let name = "ashiato45";
+    println!("Hello, {}!", name);
+    // greetings(name);
 }
 
 fn greetings(name: String) {
