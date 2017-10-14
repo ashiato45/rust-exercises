@@ -8,8 +8,9 @@
 
 fn main() {
     let name = format!("dear rustaceans");
-    greet(name.clone());
+    greet(name.clone()); /* だいたいクローンしとけばなんとかなる */
     greet(name);
+    greet(name); /* エラー! */
 }
 
 fn greet(name: String) {
