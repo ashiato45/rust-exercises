@@ -12,6 +12,8 @@
 fn main() {
     let name = "ashiato45";
     println!("Hello, {}!", name);
+    println!("{}", name);
+    println!("{:?}", name);
     // greetings(name);
 }
 
