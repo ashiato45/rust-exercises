@@ -17,7 +17,7 @@ fn main() {
     if let Some(file) = args.nth(1) {
         match read_file(&file){
             Ok(content) => println!("{}", content),
-            Err(e) => println!("Error: {}", e),
+            Err(e) => println!("エラーだにゃん: {}", e),
         }
         // println!("{}", read_file(&file).unwrap());        
         /*
@@ -27,7 +27,8 @@ fn main() {
 }
 
 fn read_file(filename: &String) -> Result<String, io::Error> {
-    let mut file = File::open(filename)?;
+    /* なんでErrってかいてないのにErrを返すのか？ */
+    let mut file = File::open(filename)?; /* ?はRustの文法で，ここでエラーがおこるとアーリーリターンする */
     let mut content = String::new();
     file.read_to_string(&mut content)?;
     Ok(content)

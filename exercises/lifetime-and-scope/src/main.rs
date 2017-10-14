@@ -9,9 +9,10 @@ fn main() {
     let source = "hello, world".to_string();
     {
         let text = &source;
-        p(text, "text")
+        p(text, "text");
+        p(text, text);
     }
-    p(text, text);
+
 
     let mut text;
     {
